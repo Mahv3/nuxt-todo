@@ -9,6 +9,7 @@
                 <button @click="deleteTodo(index)">delete</button>
             </li>
         </ul>
+        <button @click="deleteDone">delete done</button>
     </div>
 </template>
 
@@ -33,6 +34,9 @@ export default {
         }),
         deleteTodo(index) {
             this.$store.commit("todos/delete", index);
+        },
+        deleteDone() {
+            this.$store.commit("todos/deleteDone");
         }
     }
 };

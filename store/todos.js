@@ -15,4 +15,10 @@ export const mutations = {
     delete(state, index) {
         state.list.splice(index, 1)
     },
+    deleteDone(state) {
+        let box = state.list.filter(todo => {
+            return todo.done === false
+        })
+        state.list = box
+    }
 }
